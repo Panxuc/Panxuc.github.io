@@ -1,309 +1,291 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-	<title>Xuc Pan's Homepage</title>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="description" content="Xuc Pan's Homepage">
-	<meta name="keywords" content="Xuc, homepage">
-	<meta name="author" content="Xuc Pan">
-	<link rel="stylesheet" href="assets/css/main.css">
-	<link rel="shortcut icon" href="assets/img/icon.ico" type="image/x-icon">
+    <meta charset="utf-8">
+    <title>Panxuc.github.io - XuCode</title>
+    <link rel="shortcut icon" href="assets/images/favicon.ico" type="image/x-icon">
+    <style>
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+            overflow: hidden;
+            background-color: #1f1f1f;
+        }
+
+        .activity-bar {
+            position: absolute;
+            top: 30px;
+            left: 0;
+            bottom: 22px;
+            width: 48px;
+            background-color: #181818;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .activity-bar-item {
+            width: 100%;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+
+        .activity-bar-item:hover {
+            background-color: #373737;
+        }
+
+        .activity-bar-item:active {
+            background-color: #1e1e1e;
+        }
+
+        .activity-bar-item img {
+            width: 24px;
+            height: 24px;
+            fill: #868686
+        }
+
+        .menu-bar {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 30px;
+            background-color: #181818;
+        }
+
+        .menu-bar-item {
+            height: 70%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            text-decoration: none;
+            padding-left: 3px;
+            padding-right: 3px;
+            margin-left: 1px;
+            margin-right: 1px;
+            border-radius: 6px;
+        }
+
+        .menu-bar-item:hover {
+            background-color: #444444;
+        }
+
+        .menu-bar-item:active {
+            background-color: #2e2e2e;
+        }
+
+        .menu-bar-item span {
+            color: #cccccc;
+            font-size: 12px;
+        }
+
+        .menu-bar-item-search {
+            height: 70%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            text-decoration: none;
+            padding-left: 10%;
+            padding-right: 10%;
+            background-color: #2a2a2a;
+            border-radius: 6px;
+            border-width: 1px;
+            border-style: solid;
+            border-color: #3f3f3f;
+            margin-left: 12px;
+        }
+
+        .menu-bar-item-search:hover {
+            background-color: #444444;
+        }
+
+        .menu-bar-item-search:active {
+            background-color: #2e2e2e;
+        }
+
+        .menu-bar-item-search img {
+            width: 12px;
+            height: 12px;
+        }
+
+        .menu-bar-item-search span {
+            color: #cccccc;
+            font-size: 12px;
+            margin-left: 4px;
+            margin-right: 4px;
+        }
+
+        .status-bar {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 22px;
+            background-color: #181818;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .status-bar-item {
+            height: 100%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            text-decoration: none;
+            padding-left: 4px;
+            padding-right: 4px;
+        }
+
+        .status-bar-item:hover {
+            background-color: #444444;
+        }
+
+        .status-bar-item:active {
+            background-color: #2e2e2e;
+        }
+
+        .status-bar-item img {
+            width: 16px;
+            height: 16px;
+        }
+
+        .status-bar-item span {
+            color: #cccccc;
+            font-size: 12px;
+            margin-left: 4px;
+            margin-right: 4px;
+        }
+
+        .status-bar-item-remote {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            text-decoration: none;
+            padding-left: 12px;
+            padding-right: 12px;
+            background-color: #0078d4;
+        }
+
+        .status-bar-item-remote img {
+            width: 16px;
+            height: 16px;
+        }
+
+        .status-bar-item-remote:hover {
+            background-color: #1f88d9;
+        }
+
+        .status-bar-item-remote:active {
+            background-color: #2e90dc;
+        }
+
+        .primary-sidebar {
+            position: absolute;
+            top: 30px;
+            left: 48px;
+            bottom: 22px;
+            width: 8px;
+            background-color: #181818;
+        }
+    </style>
 </head>
 
 <body>
-
-	<!-- notification for small viewports and landscape oriented smartphones -->
-	<div class="device-notification">
-		<a class="device-notification--logo" href="#0">
-			<img src="assets/img/icon.jpg" alt="Xuc">
-			<p>Xuc Pan</p>
-		</a>
-		<p class="device-notification--message">Welcome to Xuc Pan's Homepage!</p>
-	</div>
-
-	<div class="perspective effect-rotate-left">
-		<div class="container">
-			<div class="outer-nav--return"></div>
-			<div id="viewport" class="l-viewport">
-				<div class="l-wrapper">
-					<header class="header">
-						<a class="header--logo" href="#0">
-							<img src="assets/img/icon.jpg" alt="Global" width="30" height="30">
-							<p>Xuc Pan</p>
-						</a>
-						<button class="header--cta cta">Xuc Pan</button>
-						<div class="header--nav-toggle">
-							<span></span>
-						</div>
-					</header>
-					<nav class="l-side-nav">
-						<ul class="side-nav">
-							<li class="is-active"><span>Home</span></li>
-							<li><span>Social</span></li>
-							<li><span>GitHub</span></li>
-							<li><span>Contact</span></li>
-							<li><span>About</span></li>
-						</ul>
-					</nav>
-					<ul class="l-main-content main-content">
-						<li class="l-section section section--is-active">
-							<div class="intro">
-								<div class="intro--banner">
-									<h1>Otaku that<br>Cannot<br>Save the World</h1>
-									<button class="cta">Learn More&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-										&nbsp; &nbsp; &nbsp;
-										<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
-											xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-											viewBox="0 0 150 118" style="enable-background:new 0 0 150 118;"
-											xml:space="preserve">
-											<g transform="translate(0.000000,118.000000) scale(0.100000,-0.100000)">
-												<path
-													d="M870,1167c-34-17-55-57-46-90c3-15,81-100,194-211l187-185l-565-1c-431,0-571-3-590-13c-55-28-64-94-18-137c21-20,33-20,597-20h575l-192-193C800,103,794,94,849,39c20-20,39-29,61-29c28,0,63,30,298,262c147,144,272,271,279,282c30,51,23,60-219,304C947,1180,926,1196,870,1167z" />
-											</g>
-										</svg>
-										<span class="btn-background"></span>
-									</button>
-									<img src="assets/img/intro.jpg" alt="Welcome" width="700" height="400">
-								</div>
-								<div class="intro--options">
-									<a href="#0">
-										<h3>Undergraduate</h3>
-										<p>Admitted in August 2022, a stupid sophomore at present. Not a Genshin Impact
-											player.</p>
-									</a>
-									<a href="#0">
-										<h3>Department of Electronic Engineering</h3>
-										<p>Notorious for “Wide Caliber, Thick Foundation”.</p>
-									</a>
-									<a href="#0">
-										<h3>Tsinghua University</h3>
-										<p>One of the best universities in P.R.China, but acknowledged for sending
-											talents to the evil USA.</p>
-									</a>
-								</div>
-							</div>
-						</li>
-						<li class="l-section section">
-							<div class="work">
-								<h2>Interact with Xuc</h2>
-								<div class="work--lockup">
-									<ul class="slider">
-										<li class="slider--item slider--item-left">
-											<a href="https://steamcommunity.com/id/panxuc/">
-												<div class="slider--item-image">
-													<img src="assets/img/steam.png" alt="Steam">
-												</div>
-												<p class="slider--item-title">Steam</p>
-												<p class="slider--item-description">Click to play games with Xuc!</p>
-											</a>
-										</li>
-										<li class="slider--item slider--item-center">
-											<a href="https://twitter.com/XucPan">
-												<div class="slider--item-image">
-													<img src="assets/img/twitter.png" alt="Twitter">
-												</div>
-												<p class="slider--item-title">Twitter</p>
-												<p class="slider--item-description">Click to tweet with Xuc!</p>
-											</a>
-										</li>
-										<li class="slider--item slider--item-right">
-											<a href="https://www.facebook.com/panxuc">
-												<div class="slider--item-image">
-													<img src="assets/img/facebook.png" alt="Facebook">
-												</div>
-												<p class="slider--item-title">Facebook</p>
-												<p class="slider--item-description">Click to chat with Xuc!</p>
-											</a>
-										</li>
-									</ul>
-									<div class="slider--prev">
-										<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
-											xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-											viewBox="0 0 150 118" style="enable-background:new 0 0 150 118;"
-											xml:space="preserve">
-											<g transform="translate(0.000000,118.000000) scale(0.100000,-0.100000)">
-												<path d="M561,1169C525,1155,10,640,3,612c-3-13,1-36,8-52c8-15,134-145,281-289C527,41,562,10,590,10c22,0,41,9,61,29
-                    c55,55,49,64-163,278L296,510h575c564,0,576,0,597,20c46,43,37,109-18,137c-19,10-159,13-590,13l-565,1l182,180
-                    c101,99,187,188,193,199c16,30,12,57-12,84C631,1174,595,1183,561,1169z" />
-											</g>
-										</svg>
-									</div>
-									<div class="slider--next">
-										<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
-											xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-											viewBox="0 0 150 118" style="enable-background:new 0 0 150 118;"
-											xml:space="preserve">
-											<g transform="translate(0.000000,118.000000) scale(0.100000,-0.100000)">
-												<path
-													d="M870,1167c-34-17-55-57-46-90c3-15,81-100,194-211l187-185l-565-1c-431,0-571-3-590-13c-55-28-64-94-18-137c21-20,33-20,597-20h575l-192-193C800,103,794,94,849,39c20-20,39-29,61-29c28,0,63,30,298,262c147,144,272,271,279,282c30,51,23,60-219,304C947,1180,926,1196,870,1167z" />
-											</g>
-										</svg>
-									</div>
-								</div>
-							</div>
-						</li>
-						<li class="l-section section">
-							<div class="about">
-								<div class="about--banner">
-									<h2>Take a Look<br>at Xuc's<br>GitHub Repositories!</h2>
-									<a href="https://github.com/Panxuc">GitHub Profile
-										<span>
-											<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
-												xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-												viewBox="0 0 150 118" style="enable-background:new 0 0 150 118;"
-												xml:space="preserve">
-												<g transform="translate(0.000000,118.000000) scale(0.100000,-0.100000)">
-													<path
-														d="M870,1167c-34-17-55-57-46-90c3-15,81-100,194-211l187-185l-565-1c-431,0-571-3-590-13c-55-28-64-94-18-137c21-20,33-20,597-20h575l-192-193C800,103,794,94,849,39c20-20,39-29,61-29c28,0,63,30,298,262c147,144,272,271,279,282c30,51,23,60-219,304C947,1180,926,1196,870,1167z" />
-												</g>
-											</svg>
-										</span>
-									</a>
-									<br>
-									<a href="https://github.com/Panxuc?tab=repositories">GitHub Repositories
-										<span>
-											<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
-												xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-												viewBox="0 0 150 118" style="enable-background:new 0 0 150 118;"
-												xml:space="preserve">
-												<g transform="translate(0.000000,118.000000) scale(0.100000,-0.100000)">
-													<path
-														d="M870,1167c-34-17-55-57-46-90c3-15,81-100,194-211l187-185l-565-1c-431,0-571-3-590-13c-55-28-64-94-18-137c21-20,33-20,597-20h575l-192-193C800,103,794,94,849,39c20-20,39-29,61-29c28,0,63,30,298,262c147,144,272,271,279,282c30,51,23,60-219,304C947,1180,926,1196,870,1167z" />
-												</g>
-											</svg>
-										</span>
-									</a>
-									<br>
-									<a href="docs/en/">Docs
-										<span>
-											<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
-												xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-												viewBox="0 0 150 118" style="enable-background:new 0 0 150 118;"
-												xml:space="preserve">
-												<g transform="translate(0.000000,118.000000) scale(0.100000,-0.100000)">
-													<path
-														d="M870,1167c-34-17-55-57-46-90c3-15,81-100,194-211l187-185l-565-1c-431,0-571-3-590-13c-55-28-64-94-18-137c21-20,33-20,597-20h575l-192-193C800,103,794,94,849,39c20-20,39-29,61-29c28,0,63,30,298,262c147,144,272,271,279,282c30,51,23,60-219,304C947,1180,926,1196,870,1167z" />
-												</g>
-											</svg>
-										</span>
-									</a>
-									<img src="assets/img/github.png" alt="About Us" width="350" height="350">
-								</div>
-								<!--
-              <div class="about--options">
-                <a href="#0">
-                  <h3>Winners</h3>
-                </a>
-                <a href="#0">
-                  <h3>Philosophy</h3>
-                </a>
-                <a href="#0">
-                  <h3>History</h3>
-                </a>
-              </div>
--->
-							</div>
-						</li>
-						<li class="l-section section">
-							<div class="contact">
-								<div class="contact--lockup">
-									<div class="modal">
-										<div class="modal--information">
-											<p>Tsinghua University</p>
-											<a href="mailto:panxuc0618@gmail.com">panxuc0618@gmail.com</a>
-											<a href="mailto:panxuc@outlook.com">panxuc@outlook.com</a>
-										</div>
-										<ul class="modal--options">
-											<li><a href="https://github.com/Panxuc">GitHub</a></li>
-											<li><a href="mailto:panxuc0618@gmail.com">GMAIL</a></li>
-											<li><a href="mailto:panxuc@outlook.com">OUTLOOK</a></li>
-										</ul>
-									</div>
-								</div>
-							</div>
-						</li>
-						<li class="l-section section">
-							<div class="about">
-								<div class="about--banner">
-									<h2>Xuc Pan, <br>a stupid sophomore<br>in Tsinghua University</h2>
-									<a href="https://github.com/Panxuc">GitHub Profile
-										<span>
-											<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
-												xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-												viewBox="0 0 150 118" style="enable-background:new 0 0 150 118;"
-												xml:space="preserve">
-												<g transform="translate(0.000000,118.000000) scale(0.100000,-0.100000)">
-													<path
-														d="M870,1167c-34-17-55-57-46-90c3-15,81-100,194-211l187-185l-565-1c-431,0-571-3-590-13c-55-28-64-94-18-137c21-20,33-20,597-20h575l-192-193C800,103,794,94,849,39c20-20,39-29,61-29c28,0,63,30,298,262c147,144,272,271,279,282c30,51,23,60-219,304C947,1180,926,1196,870,1167z" />
-												</g>
-											</svg>
-										</span>
-									</a>
-									<br>
-									<a href="docs/en/">Docs
-										<span>
-											<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
-												xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-												viewBox="0 0 150 118" style="enable-background:new 0 0 150 118;"
-												xml:space="preserve">
-												<g transform="translate(0.000000,118.000000) scale(0.100000,-0.100000)">
-													<path
-														d="M870,1167c-34-17-55-57-46-90c3-15,81-100,194-211l187-185l-565-1c-431,0-571-3-590-13c-55-28-64-94-18-137c21-20,33-20,597-20h575l-192-193C800,103,794,94,849,39c20-20,39-29,61-29c28,0,63,30,298,262c147,144,272,271,279,282c30,51,23,60-219,304C947,1180,926,1196,870,1167z" />
-												</g>
-											</svg>
-										</span>
-									</a>
-									<br>
-									<a href="https://www.ee.tsinghua.edu.cn/">Department of Electronic Engineering
-										<span>
-											<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
-												xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-												viewBox="0 0 150 118" style="enable-background:new 0 0 150 118;"
-												xml:space="preserve">
-												<g transform="translate(0.000000,118.000000) scale(0.100000,-0.100000)">
-													<path
-														d="M870,1167c-34-17-55-57-46-90c3-15,81-100,194-211l187-185l-565-1c-431,0-571-3-590-13c-55-28-64-94-18-137c21-20,33-20,597-20h575l-192-193C800,103,794,94,849,39c20-20,39-29,61-29c28,0,63,30,298,262c147,144,272,271,279,282c30,51,23,60-219,304C947,1180,926,1196,870,1167z" />
-												</g>
-											</svg>
-										</span>
-									</a>
-									<br>
-									<a href="https://www.tsinghua.edu.cn/">Tsinghua Unviersity
-										<span>
-											<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
-												xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-												viewBox="0 0 150 118" style="enable-background:new 0 0 150 118;"
-												xml:space="preserve">
-												<g transform="translate(0.000000,118.000000) scale(0.100000,-0.100000)">
-													<path
-														d="M870,1167c-34-17-55-57-46-90c3-15,81-100,194-211l187-185l-565-1c-431,0-571-3-590-13c-55-28-64-94-18-137c21-20,33-20,597-20h575l-192-193C800,103,794,94,849,39c20-20,39-29,61-29c28,0,63,30,298,262c147,144,272,271,279,282c30,51,23,60-219,304C947,1180,926,1196,870,1167z" />
-												</g>
-											</svg>
-										</span>
-									</a>
-									<img src="assets/img/icon.jpg" alt="About Us" width="300" height="300">
-								</div>
-							</div>
-						</li>
-					</ul>
-				</div>
-			</div>
-		</div>
-		<ul class="outer-nav">
-			<li class="is-active">Home</li>
-			<li>Social</li>
-			<li>GitHub</li>
-			<li>Contact</li>
-			<li>About</li>
-		</ul>
-	</div>
-
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-	<script>window.jQuery || document.write('<script src="assets/js/vendor/jquery-2.2.4.min.js"><\/script>')</script>
-	<script src="assets/js/functions-min.js"></script>
+    <div class="activity-bar">
+        <a href="https://github.com/Panxuc" class="activity-bar-item" id="activity-github" title="GitHub">
+            <img src="assets/icons/github-inverted.svg" alt="GitHub">
+        </a>
+        <a href="#" class="activity-bar-item" id="activity-explorer" title="Explorer (Ctrl+Shift+E)">
+            <img src="assets/icons/files.svg" alt="Explorer">
+        </a>
+        <a href="https://start.panxuc.com/" class="activity-bar-item" id="activity-search"
+            title="Search (Ctrl+Shift+F)">
+            <img src="assets/icons/search.svg" alt="Search">
+        </a>
+        <a href="https://github.com/Panxuc/Panxuc.github.io" class="activity-bar-item" id="activity-source-control"
+            title="Source Control (Ctrl+Shift+G)">
+            <img src="assets/icons/source-control.svg" alt="Source Control">
+        </a>
+        <a href="#" class="activity-bar-item" id="activity-debug" title="Run and Debug (Ctrl+Shift+D)">
+            <img src="assets/icons/debug-alt.svg" alt="Run and Debug">
+        </a>
+        <a href="#" class="activity-bar-item" id="activity-extensions" title="Extensions (Ctrl+Shift+X)">
+            <img src="assets/icons/extensions.svg" alt="Extensions">
+        </a>
+        <div style="flex: 1;"></div>
+        <a href="https://www.panxuc.com/" class="activity-bar-item" id="activity-accounts" title="Accounts">
+            <img src="assets/icons/account.svg" alt="Accounts">
+        </a>
+        <a href="#" class="activity-bar-item" id="activity-manage" title="Manage">
+            <img src="assets/icons/settings-gear.svg" alt="Manage">
+        </a>
+    </div>
+    <div class="menu-bar">
+        <a href="#" class="menu-bar-item" id="menu-file" title="">
+            <span>File</span>
+        </a>
+        <a href="#" class="menu-bar-item" id="menu-edit" title="">
+            <span>Edit</span>
+        </a>
+        <a href="#" class="menu-bar-item" id="menu-selection" title="">
+            <span>Selection</span>
+        </a>
+        <a href="#" class="menu-bar-item" id="menu-view" title="">
+            <span>View</span>
+        </a>
+        <a href="#" class="menu-bar-item" id="menu-go" title="">
+            <span>Go</span>
+        </a>
+        <a href="#" class="menu-bar-item" id="menu-run" title="">
+            <span>Run</span>
+        </a>
+        <a href="#" class="menu-bar-item" id="menu-terminal" title="">
+            <span>Terminal</span>
+        </a>
+        <a href="#" class="menu-bar-item" id="menu-help" title="">
+            <span>Help</span>
+        </a>
+        <a href="#" class="menu-bar-item-search" id="menu-search" title="Search Panxuc.github.io - XuCode">
+            <img src="assets/icons/search.svg" alt="Search">
+            <span>Search</span>
+        </a>
+    </div>
+    <div class="primary-sidebar"></div>
+    <div class="secondary-sidebar"></div>
+    <div class="editor-tabs"></div>
+    <div class="content"></div>
+    <div class="status-bar">
+        <a href="#" class="status-bar-item-remote" id="status-remote" title="Open a Remote Window">
+            <img src="assets/icons/remote.svg" alt="Remote">
+        </a>
+        <a href="#" class="status-bar-item" id="status-problems" title="No Problems">
+            <img src="assets/icons/error.svg" alt="Errors">
+            <span id="error-num">0</span>
+            <img src="assets/icons/warning.svg" alt="Warnings">
+            <span id="warning-num">0</span>
+        </a>
+        <div style="flex: 1;"></div>
+        <a href="#" class="status-bar-item" id="status-keyboard" title="">
+            <span id="keyboard-language">Layer: US</span>
+        </a>
+        <a href="#" class="status-bar-item" id="status-notification" title="No Notifications">
+            <img src="assets/icons/bell.svg" alt="Notification">
+        </a>
+    </div>
 </body>
 
 </html>
