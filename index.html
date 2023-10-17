@@ -21,12 +21,13 @@
             top: 30px;
             left: 0;
             bottom: 22px;
-            width: 48px;
+            width: 47px;
             background-color: #181818;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: space-between;
+            border-right: 1px solid #2e2e2e;
         }
 
         .activity-bar-item {
@@ -57,8 +58,9 @@
             top: 0;
             left: 0;
             right: 0;
-            height: 30px;
+            height: 29px;
             background-color: #181818;
+            border-bottom: 1px solid #2e2e2e;
         }
 
         .menu-bar-item {
@@ -103,6 +105,8 @@
             border-style: solid;
             border-color: #3f3f3f;
             margin-left: 12px;
+            margin-right: 12px;
+            margin-top: 4px;
         }
 
         .menu-bar-item-search:hover {
@@ -135,6 +139,7 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
+            border-top: 1px solid #2e2e2e;
         }
 
         .status-bar-item {
@@ -198,8 +203,255 @@
             top: 30px;
             left: 48px;
             bottom: 22px;
-            width: 8px;
+            width: 200px;
             background-color: #181818;
+        }
+
+        .primary-sidebar-header {
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-left: 8px;
+            padding-right: 8px;
+        }
+
+        .primary-sidebar-header span {
+            color: #cccccc;
+            font-size: 12px;
+            user-select: none;
+        }
+
+        .primary-sidebar-header img {
+            width: 16px;
+            height: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        .primary-sidebar-header img:hover {
+            background-color: #444444;
+        }
+
+        .primary-sidebar-workspace {
+            height: 30px;
+            display: flex;
+            align-items: center;
+            padding-left: 8px;
+            padding-right: 8px;
+            text-decoration: none;
+        }
+
+        .primary-sidebar-workspace img {
+            width: 16px;
+            height: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+
+        .primary-sidebar-workspace span {
+            color: #cccccc;
+            font-size: 12px;
+            font-weight: bold;
+            margin-left: 6px;
+        }
+
+        .primary-sidebar-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            text-decoration: none;
+            width: 100%;
+        }
+
+        .primary-sidebar-item-file {
+            width: 100%;
+            height: 22px;
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            padding-left: 16px;
+        }
+
+        .primary-sidebar-item-file:hover {
+            background-color: #444444;
+        }
+
+        .primary-sidebar-item-file:active {
+            background-color: #2e2e2e;
+        }
+
+        .primary-sidebar-item-file img {
+            width: 16px;
+            height: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+
+        .primary-sidebar-item-file span {
+            color: #cccccc;
+            font-size: 12px;
+            margin-left: 6px;
+        }
+
+        .editor {
+            position: absolute;
+            top: 30px;
+            left: 248px;
+            bottom: 22px;
+            right: 0;
+            background-color: #1f1f1f;
+            display: flex;
+            flex-direction: column;
+            border-left: 1px solid #2e2e2e;
+        }
+
+        .editor-tabs {
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            background-color: #181818;
+            border-bottom: 1px solid #2e2e2e;
+        }
+
+        .editor-tab {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            text-decoration: none;
+            padding-left: 4px;
+            padding-right: 4px;
+            border-left: 1px solid #2e2e2e;
+            border-right: 1px solid #2e2e2e;
+            background-color: #1f1f1f;
+        }
+
+        .editor-tab img {
+            width: 16px;
+            height: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+
+        .editor-tab span {
+            color: #cccccc;
+            font-size: 12px;
+            margin-left: 6px;
+            margin-right: 6px;
+        }
+
+        .content {
+            flex: 1;
+            overflow: auto;
+        }
+
+        .content h1 {
+            color: #ffffff;
+            font-size: 28px;
+            font-weight: bold;
+            margin-top: 0;
+            margin-bottom: 4px;
+            margin-left: 8px;
+            margin-right: 8px;
+        }
+
+        .content h2 {
+            color: #ffffff;
+            font-size: 24px;
+            font-weight: bold;
+            margin-top: 0;
+            margin-bottom: 4px;
+            margin-left: 8px;
+            margin-right: 8px;
+        }
+
+        .content h3 {
+            color: #ffffff;
+            font-size: 20px;
+            font-weight: bold;
+            margin-top: 0;
+            margin-bottom: 4px;
+            margin-left: 8px;
+            margin-right: 8px;
+        }
+
+        .content h4 {
+            color: #ffffff;
+            font-size: 16px;
+            font-weight: bold;
+            margin-top: 0;
+            margin-bottom: 4px;
+            margin-left: 8px;
+            margin-right: 8px;
+        }
+
+        .content h5 {
+            color: #ffffff;
+            font-size: 14px;
+            font-weight: bold;
+            margin-top: 0;
+            margin-bottom: 4px;
+            margin-left: 8px;
+            margin-right: 8px;
+        }
+
+        .content h6 {
+            color: #ffffff;
+            font-size: 12px;
+            font-weight: bold;
+            margin-top: 0;
+            margin-bottom: 4px;
+            margin-left: 8px;
+            margin-right: 8px;
+        }
+
+        .content p {
+            color: #ffffff;
+            font-size: 14px;
+            margin-top: 0;
+            margin-bottom: 4px;
+            margin-left: 8px;
+            margin-right: 8px;
+        }
+
+        .content img {
+            width: auto;
+            height: auto;
+            margin-top: 0;
+            margin-bottom: 4px;
+            margin-left: 8px;
+            margin-right: 8px;
+        }
+
+        .content ul {
+            color: #ffffff;
+            font-size: 14px;
+            margin-top: 0;
+            margin-bottom: 4px;
+            margin-left: 8px;
+            margin-right: 8px;
+        }
+
+        .content ul li {
+            margin-top: 0;
+            margin-bottom: 4px;
+        }
+
+        .content a {
+            color: #0969da;
+            font-size: 14px;
         }
     </style>
 </head>
@@ -264,10 +516,63 @@
             <span>Search</span>
         </a>
     </div>
-    <div class="primary-sidebar"></div>
-    <div class="secondary-sidebar"></div>
-    <div class="editor-tabs"></div>
-    <div class="content"></div>
+    <div class="primary-sidebar">
+        <div class="primary-sidebar-header">
+            <span>EXPLORER</span>
+            <img src="assets/icons/ellipsis.svg">
+        </div>
+        <a href="#" class="primary-sidebar-workspace">
+            <img src="assets/icons/chevron-down.svg">
+            <span>PANXUC.GITHUB.IO</span>
+        </a>
+        <div class="primary-sidebar-item">
+            <a href="#" class="primary-sidebar-item-file">
+                <img src="assets/icons/files/file_type_git.svg">
+                <span>.gitignore</span>
+            </a>
+        </div>
+        <div class="primary-sidebar-item">
+            <a href="#" class="primary-sidebar-item-file">
+                <img src="assets/icons/files/file_type_license.svg">
+                <span>LICENSE</span>
+            </a>
+        </div>
+        <div class="primary-sidebar-item">
+            <a href="#" class="primary-sidebar-item-file">
+                <img src="assets/icons/files/file_type_markdown.svg">
+                <span>README.md</span>
+            </a>
+        </div>
+
+    </div>
+    <!-- <div class="secondary-sidebar"></div> -->
+    <div class="editor">
+        <div class="editor-tabs">
+            <a href="#" class="editor-tab" id="editor-tab-1" title="README.md">
+                <img src="assets/icons/files/file_type_markdown.svg">
+                <span>README.md</span>
+                <img src="assets/icons/close.svg">
+            </a>
+        </div>
+        <div class="content">
+            <h1>Xuc Pan</h1>
+            <img src="https://cdn.jsdelivr.net/gh/Panxuc/Panxuc@latest/github-metrics.svg">
+            <ul>
+                <li>😄 Born in&nbsp;<a href="http://www.yangzhou.gov.cn/" rel="nofollow">Yangzhou</a>, <a
+                        href="http://www.jiangsu.gov.cn/" rel="nofollow">Jiangsu&nbsp;Province</a>, <a
+                        href="https://www.gov.cn/" rel="nofollow">P.R.China</a></li>
+                <li>🤓 Undergraduate of&nbsp;<a href="https://www.ee.tsinghua.edu.cn/" rel="nofollow">Department of
+                        Electronic
+                        Engineering</a>,&nbsp;<a href="https://www.tsinghua.edu.cn/" rel="nofollow">Tsinghua
+                        University</a></li>
+                <li>🤪 Too young, too simple, sometimes naïve</li>
+                <li>😋 Enjoy ACGN but not <a href="https://genshin.hoyoverse.com/" rel="nofollow"><em>Genshin
+                            Impact</em></a> player
+                </li>
+                <li>🥵 Otaku that cannot save the world</li>
+            </ul>
+        </div>
+    </div>
     <div class="status-bar">
         <a href="#" class="status-bar-item-remote" id="status-remote" title="Open a Remote Window">
             <img src="assets/icons/remote.svg" alt="Remote">
